@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mt-3 mb-3"> algunos de mis familiares: </h2>
+
+{% for persona in familiares %}
+
+<div class="card mb-3" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{persona.nombre}} {{persona.apellido}}</h5>
+      <p class="card-text">{{persona.parentesco}}</p>
+      <a href="{% url 'familiar' persona.id %}" class="card-link">Link a su perfil</a>
+    </div>
+  </div>
+
+
+{% endfor %}
+
+
+{% endblock %}
